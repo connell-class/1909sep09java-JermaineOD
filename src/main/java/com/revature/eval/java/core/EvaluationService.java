@@ -18,6 +18,7 @@ public class EvaluationService {
 		for (int i = reversed.length - 1, j=0; i >= 0; i--, j++) {
 			reversed[j] = string.charAt(i);
 		}
+		//System.out.println(reversed);
 		return new String(reversed);
 	}
 
@@ -31,7 +32,48 @@ public class EvaluationService {
 	 */
 	public String acronym(String phrase) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		
+		String p1 = "Portable Network Graphics";
+		int xy =0;
+		int xz =0;
+		for(int i=0, j=1; i<1; i++ ) { 
+		//int i =0;
+		if (p1.charAt(i) != ' ') {
+			System.out.println(p1.charAt(0));
+			
+			
+			}
+		}
+		xy =p1.indexOf(' ');
+		//System.out.println(xy);
+			
+			for(int l=xy, k=1;l<10; l++ ) { 
+				l++;
+				if(p1.charAt(xy) == ' ')
+					System.out.println(p1.charAt(l));
+				
+//				else
+				xz =p1.indexOf(' ', l);
+				System.out.println(p1.charAt(xz+1));
+			
+	}
+			
+			
+			
+			//xy =p1.indexOf(' ');
+			//System.out.println(l);
+		
+		
+		
+	//System.out.println(phrase);
+		
+		
+		
+		String p = new String();
+		p="JOD";
+		//System.out.println(p);
+		return new String (p1);
+		
 	}
 
 	/**
@@ -85,19 +127,41 @@ public class EvaluationService {
 
 		public boolean isEquilateral() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if(sideOne == sideTwo ) {
+				//System.out.println("this is an equilateral triangle");
+				return true;
+			}
+			else {
+				//System.out.println("this is NOT an Equilateral triangle");
+				return false;
+			}
+			
 		}
-
+		//System.out.println("All three sides equal");System.out.println("All three sides equal");System.out.println("All three sides equal");
+		
 		public boolean isIsosceles() {
 			// TODO Write an implementation for this method declaration
+			if(sideOne == sideThree && sideTwo != sideOne) {
+				
+					//System.out.println("This is a Isosceles Triangle");
+					return true;
+				}
+				
+			else
+				//System.out.println("All three sides equal");
 			return false;
+			
 		}
 
 		public boolean isScalene() {
 			// TODO Write an implementation for this method declaration
+			if(sideOne == sideTwo) {//&& sideThree == sideTwo ) {
+			//System.out.println("this is a scalene triangle");
 			return false;
 		}
-
+		else
+			return true;
+		}
 	}
 
 	/**
@@ -117,6 +181,8 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
+		String p1 = "AEIOULNRST"; String p2 = "DG"; String p3 = "BCMP"; String p4 = "FHVWY";
+		String p5 ="K"; String p8 = "JX"; String p10 ="QZ";
 		return 0;
 	}
 
@@ -153,7 +219,18 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		
+//		char[] arr = {0,1,2,3,5,6,7,8,9};
+//		for(int i = 0; i<string.length(); i++) {
+//			 if(string.charAt(i) != 0)
+//			System.out.print(string.charAt(i));
+//		}
+//		
+		String arr = string.replaceAll("[^0-9]", "");
+		
+		
+		//System.out.print(arr);
+		return new String (arr);
 	}
 
 	/**
