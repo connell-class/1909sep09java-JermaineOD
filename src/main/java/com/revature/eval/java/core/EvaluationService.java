@@ -39,7 +39,7 @@ public class EvaluationService {
 		for(int i=0, j=1; i<1; i++ ) { 
 		//int i =0;
 		if (p1.charAt(i) != ' ') {
-			System.out.println(p1.charAt(0));
+		//	System.out.println(p1.charAt(0));
 			
 			
 			}
@@ -50,11 +50,11 @@ public class EvaluationService {
 			for(int l=xy, k=1;l<10; l++ ) { 
 				l++;
 				if(p1.charAt(xy) == ' ')
-					System.out.println(p1.charAt(l));
+			//		System.out.println(p1.charAt(l));
 				
 //				else
 				xz =p1.indexOf(' ', l);
-				System.out.println(p1.charAt(xz+1));
+			//	System.out.println(p1.charAt(xz+1));
 			
 	}
 			
@@ -615,7 +615,30 @@ public class EvaluationService {
 	 */
 	public int solveWordProblem(String string) {
 		// TODO Write an implementation for this method declaration
+		
+		String s1 = string;
+		String s2 = "What is 6 multiplied by 4?";
+		String s3 = "What is 25 divided by 5?";
+		String con1 = s1.replaceAll("[What is ]", "");
+		String sx= new String();
+		//s2 = sx;
+		String con2 = con1;	
+		 
+//		for(int i=0; i<con2.length(); )
+//		if(con2.indexOf(i) == 'm' ) {
+		//String s6 =	con2.replaceAll("multipliedby", "");
+//			i++;
+//		}
+		con2.replace('m', '*');
+		
+		
+		System.out.println(con2);
 		return 0;
+		
 	}
 
+	
+	
+	
+	
 }
