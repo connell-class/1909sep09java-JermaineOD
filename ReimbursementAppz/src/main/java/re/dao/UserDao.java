@@ -80,7 +80,7 @@ public List <User> getByUsername(String uUsername) throws ClassNotFoundException
 	String password = "password";
 	String url = "jdbc:postgresql://zoidjermaine.ci8enrbkkspq.us-east-2.rds.amazonaws.com:5432/project1";
 	
-	  Class.forName("org.postgressql.Driver");
+	  //Class.forName("org.postgressql.Driver");
 	try ( Connection conn = DriverManager.getConnection(url,username,password)){
 		String sql="select * from users where lower(username) ="+"'"+uUsername+"'";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -107,7 +107,7 @@ public String getByLogin(String uUsername,String uPassword) throws ClassNotFound
 	String password = "password";
 	String url = "jdbc:postgresql://zoidjermaine.ci8enrbkkspq.us-east-2.rds.amazonaws.com:5432/project1";
 	
-	  Class.forName("org.postgressql.Driver");
+	  //Class.forName("org.postgressql.Driver");
 	try ( Connection conn = DriverManager.getConnection(url,username,password)){
 		String sql="select * from users where lower(username) ="+"'"+uUsername+"'";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -118,14 +118,12 @@ public String getByLogin(String uUsername,String uPassword) throws ClassNotFound
 		u.add( new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7)));
 			
 		}
-		if(!u.isEmpty()) {
-			return u.get(0).getUser_password().toString();
-		}
+return u.get(0).getUser_password().toString();
+		
 	}catch (SQLException e) {
 		e.printStackTrace();
 		return "uu";
 	}
-	return "empty";
 }
 
 
@@ -134,6 +132,7 @@ public int number(int index) {
 	return ++index;
 }
 }
+
 
 
 

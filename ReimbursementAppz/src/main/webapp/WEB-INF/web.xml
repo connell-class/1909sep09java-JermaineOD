@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>ReimbursementApp</display-name>
   <welcome-file-list>
-    <welcome-file>/html/index.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -10,31 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
     
-    
   <servlet>
-  	<servlet-name>Master</servlet-name>
-  	<servlet-class>re.servlet.MasterServlet</servlet-class>
+  	<servlet-name>search</servlet-name>
+  	<servlet-class>com.user.dao.Reimbursement</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>Master</servlet-name>
-  	<url-pattern>*.go</url-pattern>
+  	<servlet-name>search</servlet-name>
+  	<url-pattern>/idnum</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>session</servlet-name>
-  	<servlet-class>re.servlet.SessionServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>session</servlet-name>
-  	<url-pattern>*.session</url-pattern>
-  </servlet-mapping>
-  
-  <error-page>
-  	<error-code>500</error-code>
-  	<location>/</location>
-  </error-page>
-  
-   
-
 </web-app>
