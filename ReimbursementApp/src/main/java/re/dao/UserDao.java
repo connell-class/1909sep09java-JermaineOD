@@ -107,7 +107,7 @@ public String getByLogin(String uUsername,String uPassword) throws ClassNotFound
 	String password = "password";
 	String url = "jdbc:postgresql://zoidjermaine.ci8enrbkkspq.us-east-2.rds.amazonaws.com:5432/project1";
 	
-	  Class.forName("org.postgressql.Driver");
+	  //Class.forName("org.postgressql.Driver");
 	try ( Connection conn = DriverManager.getConnection(url,username,password)){
 		String sql="select * from users where lower(username) ="+"'"+uUsername+"'";
 		PreparedStatement ps = conn.prepareStatement(sql);

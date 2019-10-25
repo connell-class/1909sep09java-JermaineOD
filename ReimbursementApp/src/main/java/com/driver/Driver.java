@@ -3,6 +3,7 @@ package com.driver;
 import java.util.ArrayList;
 import java.util.List;
 
+import re.controller.SubmitReimbursement;
 import re.dao.ReimbursementDao;
 import re.dao.UserDao;
 import re.model.Reimbursement;
@@ -16,7 +17,9 @@ public class Driver {
 		
 		UserDao ud = new UserDao();
 		//System.out.println(ud.getByLogin("ddfexe01"));
-		ReimbursementDao rd = new ReimbursementDao(); 
+		ReimbursementDao rd = new ReimbursementDao();
+		Reimbursement re =new Reimbursement(1,500,"8:00","9:00","I was Broke", 3,3,10,3); 
+		rd.sumbitReimburse(re);
 		//int index = ud.number(4);
 			System.out.println(ud.getByLogin("mitexe02","?"));
 			//System.out.println(ud.getById(3));

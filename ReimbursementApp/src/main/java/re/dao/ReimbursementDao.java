@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import re.model.Reimbursement;
@@ -73,7 +75,50 @@ public class ReimbursementDao {
 			}
 		}
 
+		public int sumbitReimburse(Reimbursement re) throws ClassNotFoundException {
+			int rowsaffected =0;
+			
+			String username = "jdbc_user";
+			String password = "password";
+			String url = "jdbc:postgresql://zoidjermaine.ci8enrbkkspq.us-east-2.rds.amazonaws.com:5432/project1";
+			
+			 // Class.forName("org.postgressql.Driver");
+			  
+			  
+			  
+			
+			  try(Connection conn = DriverManager.getConnection(url,username,password)){
+				String sql="insert into reimbursement values(?,?,?,?,?,?,?,?)";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				Calendar cal = Calendar.getInstance();
+				
+				//ps.setInt(1, 11);
+				ps.setInt(1, re.getRe_amount());
+				ps.setTimestamp(2,null);
+				ps.setTimestamp(3, null);
+				ps.setString(4, re.getRe_info());
+				ps.setInt(5, re.getRe_creator());
+				ps.setInt(6,  0);
+				ps.setInt(7, 10);
+				ps.setInt(8, re.getType_id());
+				
+				ps.executeUpdate();
+				
+				
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			
+			
+			return 1;
+		}
+		
 	}
+
+
+		
+	
+	
 
 		
 		
