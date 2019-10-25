@@ -1,8 +1,10 @@
 package re.controller;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
-public class LoginController {
+public class LoginController extends HttpServlet{
+	
 	public static String login(HttpServletRequest req) {
 		System.out.println(req.getMethod());
 		if (req.getMethod().toLowerCase().equals("post")) {
@@ -18,7 +20,7 @@ public class LoginController {
 
 			}
 		} else {
-			return "html/index.html";
+			return "html/second.html";
 		}
 	}
 }

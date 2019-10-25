@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dt/hibernate-configuartion-3.0.dtd">
+    
+    <hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">
+        	jdbc:postgresql://zoidjermaine.ci8enrbkkspq.us-east-2.rds.amazonaws.com:5432/hbm_db
+        </property>
+        <property name="hibernate.connection.username">
+        	hbm_user
+        </property>
+        <property name="hibernate.connection.password">
+        	password
+        </property>	
+        <property name="hibernate.connection.Dialect">
+        	org.hibernate.dialect.PostgreSQLDialect
+        </property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.pool_size">10</property>
+        
+        <property name="hibernate.connection.show_sql">true</property>
+        <property name="hibernate.connection.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        
+        <mapping resource="hibernate.hbm.xml"/>	
+    
+    </session-factory>
+    
+    </hibernate-configuration>

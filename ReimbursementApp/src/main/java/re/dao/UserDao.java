@@ -72,8 +72,8 @@ return u;
 	}
 }
 
-public List <User> getByUsername(String uUsername) throws ClassNotFoundException {//get by user's username
-	List<User> u = new ArrayList<>();
+public User getByUsername(String uUsername) throws ClassNotFoundException {//get by user's username
+	//List<User> u = new ArrayList<>();
 	
 	
 	String username = "jdbc_user";
@@ -82,20 +82,20 @@ public List <User> getByUsername(String uUsername) throws ClassNotFoundException
 	
 	  Class.forName("org.postgressql.Driver");
 	try ( Connection conn = DriverManager.getConnection(url,username,password)){
-		String sql="select * from users where lower(username) ="+"'"+uUsername+"'";
+		String sql="select * from users where lower(username) =?"; //+"'"+uUsername+"'";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		//ps.setInt(1, id);
+		ps.setString(1, uUsername);
 		ResultSet rs = ps.executeQuery();
-		//User s = null;
+		User u = null;
 		while(rs.next()) {
-		u.add( new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7)));
+		u = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7));
 			
 		}
 return u;
 		
 	}catch (SQLException e) {
 		e.printStackTrace();
-		return u;
+		return null;
 	}
 }
 

@@ -31,7 +31,7 @@ public class ReimbursementDao {
 			
 			  //Class.forName("org.postgressql.Driver");
 			try ( Connection conn = DriverManager.getConnection(url,username,password)){
-				String sql="select * from reimbursement where status_id ="+id;	// 10 = to pending
+				String sql="select * from reimbursement where status_id =?";	// 10 = to pending
 				PreparedStatement ps = conn.prepareStatement(sql);
 				//ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();

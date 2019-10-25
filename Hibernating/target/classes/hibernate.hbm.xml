@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sleep.model">
+	<class name="Book" table="bookshelf">
+	<!-- this is optional info about stuff -->
+	<meta attribute="descriptionof ">
+		this is a description of our bookshelf or something.
+	</meta>
+	
+	<!-- this is the primary key -->
+	<id name="isbn" type="int" column="isbn_number">
+		<generator class="native"></generator>
+	</id>
+	
+	<!-- now all the properties -->
+	<property name="title" type="string">
+		<column name="book_title" not-null="true" unique="true"/>
+	</property>
+	<property name="haspictures" type="boolean" column="has_pictures"/>
+	
+	</class>
+
+</hibernate-mapping>

@@ -4,20 +4,17 @@ import javax.servlet.http.HttpServletRequest;
 
 public class RequestHelper {
 
-	public static String process(HttpServletRequest req) {
 
-		switch (req.getRequestURI()) {
-		case "/ReimbursementApp/home.go":
-			return HomeController.goHome(req);
-		case "/ReimbursementApp/login.go":
-		
+		public static String process(HttpServletRequest req) {
+
+			switch (req.getRequestURI()) {
+			case "/ReimbursementApp/home.go":
+				return HomeController.goHome(req);
+			case "/ReimbursementApp/login.go":
 				return LoginController.login(req);
-		
-		default:
+			default:
 			return "html/third.html";
-		
 			}
-			
-	}
+		}
 
-}
+	}
