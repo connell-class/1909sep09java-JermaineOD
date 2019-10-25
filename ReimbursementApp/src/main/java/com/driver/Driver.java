@@ -18,13 +18,13 @@ public class Driver {
 		UserDao ud = new UserDao();
 		//System.out.println(ud.getByLogin("ddfexe01"));
 		ReimbursementDao rd = new ReimbursementDao();
-		Reimbursement re =new Reimbursement(1,500,"8:00","9:00","I was Broke", 3,3,10,3); 
-		rd.sumbitReimburse(re);
+		//Reimbursement re =new Reimbursement(1,500,null,null,"I was Broke", 3,3,10,3); 
+		//rd.sumbitReimburse(re);
 		//int index = ud.number(4);
-			System.out.println(ud.getByLogin("mitexe02","?"));
+			System.out.println(ud.getByLogin("mitexe02","?").get(0).getLast_name());
 			//System.out.println(ud.getById(3));
 			//System.out.println(ud.getAllUser());
-			//System.out.println(ud.getByUsername("a-kep001"));
+			System.out.println(ud.getByUsername("a-kep001"));
 			//System.out.println(rd.getById(20));
 			//System.out.println(rd.getByAll());
 			//System.out.println(rd.toString());

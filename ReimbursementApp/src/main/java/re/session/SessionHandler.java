@@ -16,9 +16,12 @@ public class SessionHandler {
 			break;
 		case "/ReimbursementApp/print.session":
 			HttpSession current = req.getSession(false);
+			if(current == req.getSession(false)) {
 			String user = (String)current.getAttribute("username");
 			String pass = (String)current.getAttribute("password");
 			System.out.println(user+"    "+pass);
+			}
+			else System.out.println("nope!");
 			break;
 		case "/ReimbursementApp/invalidate.session":
 			req.getSession().invalidate();

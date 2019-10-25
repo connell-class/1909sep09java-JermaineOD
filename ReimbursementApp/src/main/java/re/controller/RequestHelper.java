@@ -12,8 +12,10 @@ public class RequestHelper {
 				return HomeController.goHome(req);
 			case "/ReimbursementApp/login.go":
 				return LoginController.login(req);
+			case "/ReimbursementApp/log.go":
+				return LoginController.logIn(req);
 			default:
-			return "html/third.html";
+			return "html/index.html";
 			}
 		}
 

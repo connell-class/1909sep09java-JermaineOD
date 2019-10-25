@@ -1,4 +1,4 @@
-package re.servlet;
+package re.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,12 +27,12 @@ public class LoginServlet extends HttpServlet{
 				ud.getByLogin(username, password);
 				
 				System.out.println(ud.getByLogin(username, password));
-				String uPass = ud.getByLogin(username, password);
-				//String uUser = ud.getByUsername(username);
-				//List<User> lu = ud.getByUsername(username);
-				//System.out.println(lu.get(0).getUser_password());
+				// uPass = ud.getByLogin(username, password);
+				 
+				List<User> lu = ud.getByLogin(username, password);
+				System.out.println(lu.get(0).getUser_password());
 				
-				if(password.equals(uPass) && username.equals(username)) {
+				if(password.equals("daisy") && username.equals(username)) {
 					resp.getWriter().println("<html><body><h1>Bigup yuhself!!!</h1></body></html>");
 				} else {
 					resp.getWriter().println("<html><body><h1>your password is incorrect, Please Try Again!!!</h1></body></html>");
