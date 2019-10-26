@@ -8,8 +8,8 @@ import re.model.User;
 public class AuthenticateUser {
 	
 	String routing ="rounting";
-	
-	public String verifyUser( String uUsername, String uPassword) throws ClassNotFoundException{
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public User verifyUser( String uUsername, String uPassword) throws ClassNotFoundException{
 	UserDao ud = new UserDao();
 	User user = new User();
 	
@@ -27,15 +27,8 @@ public class AuthenticateUser {
 //	String password =(user.getFirst_name().toString());
 //	System.out.println(password);
 //	
-	return  routing;
+	return  user;
 	}
-	
-	
-	
-
-	
-	
-	
-	
+//___________________________________________________________________________________________________________________________________________________________________________________________
 
 }
