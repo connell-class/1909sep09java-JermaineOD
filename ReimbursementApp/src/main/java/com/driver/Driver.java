@@ -18,10 +18,10 @@ public class Driver {
 		UserDao ud = new UserDao();
 		//System.out.println(ud.getByLogin("ddfexe01"));
 		ReimbursementDao rd = new ReimbursementDao();
-		Reimbursement re =new Reimbursement(100,null,0,"I really needed it", 4,10,3); 
+		//Reimbursement re =new Reimbursement(50,null,0,"I really needed it", 5,10,2); 
 		SubmitReimbursement sub = new SubmitReimbursement();
-		rd.sumbitReimburse(re);
-		System.out.println(re);
+		//rd.sumbitReimburse(re);
+		///System.out.println(re);
 		List<Reimbursement> rel = rd.getByAll();
 		System.out.println(rd.getById(20));
 		
@@ -36,7 +36,7 @@ public class Driver {
 			//System.out.println(rd.toString());
 			//System.out.println(r.toString());
 		List<User> ls = new ArrayList<>();
-		//System.out.println(au.verifyUser("JODceo01", "?"));
+		System.out.println(au.verifyUser("Midtexe02", "hottaz"));
 		//System.out.println(ls.get(0).getUser_password());
 }
 }
