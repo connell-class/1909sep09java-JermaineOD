@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	
 
 <title>Submit Reimbursement</title>
 </head>
 
 <body>
+<h5>	Employee</h5>
+<h3>CREATE REIMBURSEMENT</h3>
 
-
-
-
+<form action="register" method="post">
+			<label>Amount</label> <input type="number" name="re_amount" id="amount"><br/>
+			<label>Description</label> <input type="text" name="re_description" id="description"><br/>
+			<label>SubmitTime</label> <input type="datetime" name="re_submitted" id="in time"><br/>
+			<label>ResolvedTime</label> <input type="datetime" name="re_resolved" id="out time"><br/>
+			<label>Author</label> <input type="number" name="re_author" id="author"><br/>
+			<label>Resolver</label> <input type="number" name="re_solver" id="resolver"><br/>
+			<label>Status</label> <input type="number" name="status" id="status_id"><br/>
+			<label>Type</label> <input type="text" name="type_id" id="status_type"><br/>
+			<input type="submit" value="Submit" id="submit">
+		</form>
 
 
 

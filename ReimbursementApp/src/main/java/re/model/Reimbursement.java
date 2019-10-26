@@ -6,13 +6,12 @@ public class Reimbursement {
 	private int re_amount;
 	private String re_submit;
 	private String re_resolve;
+	private int re_receipt;
 	private String re_info;
 	private int re_creator;
 	private int re_resolver;
 	private int status_id;
 	private int type_id;
-	
-	
 	public int getRe_id() {
 		return re_id;
 	}
@@ -36,6 +35,12 @@ public class Reimbursement {
 	}
 	public void setRe_resolve(String re_resolve) {
 		this.re_resolve = re_resolve;
+	}
+	public int getRe_receipt() {
+		return re_receipt;
+	}
+	public void setRe_receipt(int re_receipt) {
+		this.re_receipt = re_receipt;
 	}
 	public String getRe_info() {
 		return re_info;
@@ -67,6 +72,9 @@ public class Reimbursement {
 	public void setType_id(int type_id) {
 		this.type_id = type_id;
 	}
+
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -75,6 +83,7 @@ public class Reimbursement {
 		result = prime * result + re_creator;
 		result = prime * result + re_id;
 		result = prime * result + ((re_info == null) ? 0 : re_info.hashCode());
+		result = prime * result + re_receipt;
 		result = prime * result + ((re_resolve == null) ? 0 : re_resolve.hashCode());
 		result = prime * result + re_resolver;
 		result = prime * result + ((re_submit == null) ? 0 : re_submit.hashCode());
@@ -102,6 +111,8 @@ public class Reimbursement {
 				return false;
 		} else if (!re_info.equals(other.re_info))
 			return false;
+		if (re_receipt != other.re_receipt)
+			return false;
 		if (re_resolve == null) {
 			if (other.re_resolve != null)
 				return false;
@@ -120,19 +131,38 @@ public class Reimbursement {
 			return false;
 		return true;
 	}
+
+
+
+	
 	@Override
 	public String toString() {
 		return "Reimbursement [re_id=" + re_id + ", re_amount=" + re_amount + ", re_submit=" + re_submit
-				+ ", re_resolve=" + re_resolve + ", re_info=" + re_info + ", re_creator=" + re_creator
-				+ ", re_resolver=" + re_resolver + ", status_id=" + status_id + ", type_id=" + type_id + "]\n";
+				+ ", re_resolve=" + re_resolve + ", re_receipt=" + re_receipt + ", re_info=" + re_info + ", re_creator="
+				+ re_creator + ", re_resolver=" + re_resolver + ", status_id=" + status_id + ", type_id=" + type_id
+				+ "]\n";
 	}
-	public Reimbursement(int re_id, int re_amount, String re_submit, String re_resolve, String re_info, int re_creator,
-			int re_resolver, int status_id, int type_id) {
+	public Reimbursement(int re_id, int re_amount, String re_submit, String re_resolve, int re_receipt,
+			String re_info, int re_creator, int re_resolver, int status_id, int type_id) {
 		super();
 		this.re_id = re_id;
 		this.re_amount = re_amount;
 		this.re_submit = re_submit;
 		this.re_resolve = re_resolve;
+		this.re_receipt = re_receipt;
+		this.re_info = re_info;
+		this.re_creator = re_creator;
+		this.re_resolver = re_resolver;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+	public Reimbursement(int re_amount, String re_submit, String re_resolve, int re_receipt, String re_info,
+			int re_creator, int re_resolver, int status_id, int type_id) {
+		super();
+		this.re_amount = re_amount;
+		this.re_submit = re_submit;
+		this.re_resolve = re_resolve;
+		this.re_receipt = re_receipt;
 		this.re_info = re_info;
 		this.re_creator = re_creator;
 		this.re_resolver = re_resolver;
@@ -142,6 +172,20 @@ public class Reimbursement {
 	public Reimbursement() {
 		super();
 	}
+	public Reimbursement(int re_amount, String re_submit, int re_receipt, String re_info, int re_creator, int status_id,
+			int type_id) {
+		super();
+		this.re_amount = re_amount;
+		this.re_submit = re_submit;
+		this.re_receipt = re_receipt;
+		this.re_info = re_info;
+		this.re_creator = re_creator;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+	
+	
+
 	
 	
 

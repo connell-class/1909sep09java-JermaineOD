@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>3_Employee</title>
+<title>3_Manager</title>
 </head>
 <body>
 <h3>WELCOME MANAGER</h3>
 		<p>reimbursements</p>
-	<input type="submit" value="Create">
-	<input type="submit" value="View">
+		
+	<form method="get" action="getall">
+	<input type="checkbox" name="view all" value="View All">
+	<input type="submit" value="View All">
+	
+	</form>
+	
+	<input type="submit" value="Search">
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<form action="invalidate.session" method="post">
+		<span>
+		<input type="submit" value="log out">
+		</span>
+		
+	</form>
 
 </body>
 </html>

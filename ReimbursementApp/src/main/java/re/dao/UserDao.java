@@ -19,7 +19,7 @@ public class UserDao {
 			}
 	}
 	
-	public List <User> getById(int userid) throws ClassNotFoundException {//get by user id
+	public List <User> getById(int userid) throws ClassNotFoundException {//get by user id (employee and Manager)
 		List<User> u = new ArrayList<>();
 		
 		String username = "jdbc_user";
@@ -45,7 +45,7 @@ public class UserDao {
 		}
 	}
 
-public List <User> getAllUser() throws ClassNotFoundException {//get all users
+public List <User> getAllUser() throws ClassNotFoundException {//get all users (Managers ONLY!!!)
 	List<User> u = new ArrayList<>();
 	
 	
@@ -72,7 +72,7 @@ return u;
 	}
 }
 
-public int getByUsername(String uUsername) throws ClassNotFoundException {//get by user's username
+public int getByUsername(String uUsername) throws ClassNotFoundException {//get by user's username (employee and Managers)
 	//List<User> u = new ArrayList<>();
 	
 	

@@ -27,10 +27,11 @@ public class LoginController extends HttpServlet{
 				int role = ud.getByLogin(username, password).get(0).getRole_id();
 				String user = ud.getByLogin(username, password).get(0).getUsername();
 				String pass = ud.getByLogin(username, password).get(0).getUser_password();
-				if (username.equals(username) && password.equals(pass) && role >=3) {
+				
+				if (username.equals(username) && password.equals(pass) && role >2) {
 					
 					return "html/viewReimburse.html";
-				} else if(username.equals(username) && password.equals(pass) && role <=2) {
+				} else if(username.equals(username) && password.equals(pass) && role <3) {
 					return "html/third.html";
 
 				}else

@@ -22,13 +22,14 @@ public class SubmitReimbursement extends HttpServlet {
 		int amount = Integer.parseInt(req.getParameter("amount"));
 		String ts = "";
 		String ts2 = "";
+		int receipt =0;
 		String info = req.getParameter("re_description");
 		int creator = Integer.parseInt(req.getParameter("re_author"));
 		int resolver = 2;
 		int status = Integer.parseInt(req.getParameter("status_id"));
 		int type = Integer.parseInt(req.getParameter("type_id"));
 		
-		Reimbursement re = new Reimbursement(reid,amount,ts,ts2,info,creator,resolver,status,type);
+		Reimbursement re = new Reimbursement(amount,ts,ts2,0,info,creator,resolver,status,type);
 		
 		ReimbursementDao rd = new ReimbursementDao();
 		

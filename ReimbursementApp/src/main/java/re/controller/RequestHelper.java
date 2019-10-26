@@ -14,6 +14,8 @@ public class RequestHelper {
 				return LoginController.login(req);
 			case "/ReimbursementApp/log.go":
 				return LoginController.logIn(req);
+			case "/ReimbursementApp/all.go":
+				return LoginController.logIn(req);
 			default:
 			return "html/index.html";
 			}
