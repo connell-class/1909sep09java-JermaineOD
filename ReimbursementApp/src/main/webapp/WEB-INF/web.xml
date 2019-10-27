@@ -30,6 +30,21 @@
   	<url-pattern>*.session</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>ViewerServlet</servlet-name>
+  	<servlet-class>re.servlet.ViewerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ViewerServlet</servlet-name>
+  	<url-pattern>*.json</url-pattern>
+  </servlet-mapping>
+  
+  	<error-page>
+		<error-code>404</error-code>
+		<location>/html/404-page.html</location>
+	</error-page>
+  
   <error-page>
   	<error-code>500</error-code>
   	<location>/</location>

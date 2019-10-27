@@ -55,25 +55,32 @@ public class LoginController extends HttpServlet{
 //______________________________________________________________________________________________________________________________________________
 	public static String LogIn(HttpServletRequest req) {
 		System.out.println(req.getMethod());
+		String rounting ="";
 		if (req.getMethod().toLowerCase().equals("post")) {
 			
 			
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
 			System.out.println(username + "    " + password);
-			AuthenticateUser au = new AuthenticateUser();
-			User us = new User();
+			
 			try {
-				au.verifyUser(username, password);
-				
-				if(us.getUser_password().equals(password) && us.getRole_id() <3) {
-					System.out.println("you are in!");
-					
-					
-					return "html/third.html";
-				}
-				
-				
+				AuthenticateUser au = new AuthenticateUser();
+				User us = new User();
+				rounting =au.verifyUser(username, password);
+//				
+//				if(us.getUser_password().equals(password) && us.getRole_id() <3) {
+//					System.out.println("Manager in!");
+//					
+//					
+//					return "html/manager.html";
+//				}
+//				else if(us.getUser_password().equals(password) && us.getRole_id() >2) {
+//					System.out.println("Employee in!");
+//					
+//					
+//					return "html/employee.html";
+//				}
+//				
 				
 				
 			} catch (ClassNotFoundException e) {
@@ -82,7 +89,8 @@ public class LoginController extends HttpServlet{
 			}
 			
 		}
-		return "html/viewReimburse.html";
+		//return rounting;
+		return "html/index.html";
 	}
 	
 	

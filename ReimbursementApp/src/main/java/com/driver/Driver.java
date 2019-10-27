@@ -10,16 +10,25 @@ import re.model.Reimbursement;
 import re.model.User;
 import re.service.AuthenticateUser;
 import re.service.Registration;
+import re.service.ViewReimbursements;
 
 public class Driver {
 
 	public static void main(String[] args) throws ClassNotFoundException {
+		ViewReimbursements vrem = new ViewReimbursements();
 		AuthenticateUser au = new AuthenticateUser();
-		Registration reg = new Registration();
+		ReimbursementDao da = new ReimbursementDao();
+		//List<Reimbursement> lis  = new List<Reimbursement>();
+		System.out.println(da.getById(5));
+		
+		//Registration reg = new Registration();
 		User user = new User();
-		reg.RegisterUser(user);
+		//reg.RegisterUser(user);
 		System.out.println(user);
 		
+		int userid =2;
+		vrem.viewMyReimbursements(userid );
+		System.out.println(vrem);
 		//UserDao ud = new UserDao();
 		//System.out.println(ud.getByLogin("ddfexe01"));
 		//ReimbursementDao rd = new ReimbursementDao();
