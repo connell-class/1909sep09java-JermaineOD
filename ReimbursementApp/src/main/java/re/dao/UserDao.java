@@ -106,11 +106,12 @@ public class UserDao {
 			ps.setString(1, us.getUsername());
 			ps.setString(2, us.getUser_password());
 			ps.setString(3, us.getLast_name());
-			ps.setString(3, us.getFirst_name());
-			ps.setString(4, us.getUser_email());
-			ps.setInt(5, us.getRole_id());
+			ps.setString(4, us.getFirst_name());
+			ps.setString(5, us.getUser_email());
+			ps.setInt(6, us.getRole_id());
 		
 			ps.executeUpdate();
+			System.out.println("inserting...");
 			
 			
 			}catch(SQLException e) {
@@ -118,7 +119,7 @@ public class UserDao {
 			}
 		
 		
-		return "rowsaffected";
+		return "html/third.html";
 	}
 //__________________________________________________________________________________________________________________________________________________________________________________________
 

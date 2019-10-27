@@ -6,12 +6,12 @@ import re.dao.UserDao;
 public class Registration {
 	
 	
-	public User RegisterUser(User user) throws ClassNotFoundException{
+	public String RegisterUser(User user) throws ClassNotFoundException{
 		UserDao ud = new UserDao();
-		//User user = new User();
+		//User use = new User();
 
-		
-		
-		return user;
+		//ud.registerEmployee(user);
+		System.out.println(user);
+		return ud.registerEmployee(user);
 	}
 }

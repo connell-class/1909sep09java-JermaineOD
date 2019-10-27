@@ -9,6 +9,7 @@ public class RequestHelper {
 
 		public static String process(HttpServletRequest req) {
 
+			System.out.println(req.getRequestURI());
 			switch (req.getRequestURI()) {
 			case "/ReimbursementApp/home.go":
 				return HomeController.goHome(req);
@@ -26,13 +27,13 @@ public class RequestHelper {
 				return LoginController.LogIn(req);
 				
 			case "/ReimbursementApp/register.go":
-				return RegisterController.RegisterUser(req);
+				return RegisterController.toRegister(req);
 				
 			case "/ReimbursementApp/submit.go":
-				return HomeController.goHome(req);
+				return RegisterController.RegisterUser(req);
 			
 			default:
-			return "index.html";
+			return "html/third.html";
 			}
 		}
 

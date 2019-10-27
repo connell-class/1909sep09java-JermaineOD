@@ -3,12 +3,12 @@ package re.model;
 public class User {
 
 	private int users_id = 0;
-	private String username ="";
-	private String user_password ="";
-	private String last_name = "";
-	private String first_name = "";
-	private String user_email ="";
-	private int role_id =0;
+	private String username ="username";
+	private String user_password ="password";
+	private String last_name = "lastname";
+	private String first_name = "firstname";
+	private String user_email ="useremail";
+	private int role_id =3;
 	public int getUsers_id() {
 		return users_id;
 	}

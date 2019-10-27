@@ -104,7 +104,7 @@ public class ReimbursementDao {
 				
 				//ps.setInt(1, 1);
 				ps.setInt(1, re.getRe_amount());
-				ps.setString(2,"10/26/2019_09:25 am");
+				ps.setTimestamp(2, new Timestamp(cal.getTime().getTime())); //(2,"10/26/2019_09:25 am");
 				//ps.setString(4, null);
 				ps.setInt(3, 0);
 				ps.setString(4, re.getRe_info());

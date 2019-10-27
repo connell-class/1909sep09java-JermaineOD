@@ -82,7 +82,7 @@ public class LoginController extends HttpServlet{
 			}
 			
 		}
-		return "html/second.html";
+		return "html/viewReimburse.html";
 	}
 	
 	
